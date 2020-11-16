@@ -6,7 +6,7 @@ public class Weapon {
 	
 	
 	public Weapon(String wT, double d, int aR) {
-		weaponType = wT:
+		weaponType = wT;
 		damage = d;
 		ammoRemaining = aR;
 	}
