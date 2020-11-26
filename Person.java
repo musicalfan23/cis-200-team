@@ -1,85 +1,80 @@
 import java.util.*;
 import java.lang.*;
+/* Person.java
+*
+* This class creates a Person object that serve as the main character of the game.  
+* The person does less than the ship and is mostly used to say things and keep track of different stats.  
+* The person is a lightweight class that allows other classes to call strings and change some stats.
+*/
 
 public class Person {
     private Ship myShip;
     private int healthPoints;
     private String name;
-    private String species;
     private int defenseStats;
-    private Weapon weapon;
 
+    /**Person()
+    * This is the default constructor for the Person class. It sets
+    * the instance variable of name to an empty string.
+    */
     Person() {
-        this.myship = new Ship();
-        this.healthpoint = 100;
         this.name = "";
-        this.species = "";
-        this.defenseStats = 100;
-        this.weapon = new Weapon();
     }
 
-    Person(String name, String species) {
-        this.myship = new Ship();
-        this.healthPoints = 100;
+    /**Person()
+    * This is the main constructor for the Person class. It sets the
+    * name instance variable to the name entered through the 
+    * parameter.
+    *
+    * @param name - A string containing the Person object's name
+    */
+    Person(String name) {
         this.name = name;
-        this.species = species;
-        this.defenseStats = 100;
-        this.weapon = new Weapon();
     }
 
-    public Ship getMyShip() {
-        return this.myShip;
-    }
-
-    public int getMyHealthPoints() {
-        return this.healthPoints;
-    }
-
+    /** getName()
+    * This method allows other classes to get the value of the name
+    * instance variable for the Person object.
+    *
+    * @return - A string containing the Person object's name
+    */
     public String getName() {
         return this.name;
     }
 
-    public String getSpecies() {
-        return this.species;
-    }
-
-    public int getDefenseStats() {
-        return this.defenseStats;
-    }
-
-    public void setDefenseStats(int defenseStats) {
-        this.defenseStats = defenseStats;
-    }
-
-    public void setHealthPoints(int healthPoints) {
-        this.healthPoints = healthPoints;
-    }
+    /** saySomething()
+    * This method creates a set of possible dialog options for the
+    * person to say, and returns the one which matches with the
+    * number in the parameter
+    *
+    * @param whichPhrase - An int between 1 and 10, to decide the saying.
+    * @return - A string containing the chosen dialog phrase.
+    */
 
     public String saySomething(int whichPhrase) {
 
-        String s;
+        String s = "";
         if (whichPhrase == 0) {
             Random rand = new Random();
             whichPhrase = rand.nextInt(9);
             whichPhrase = whichPhrase + 1;
         }
-        whichPhrase = Integer.toString(whichPhrase);
 
-        Map<String, String> sayings = new HashMap<String, String>();
-        sayings.put("1", "Isn't the weather up here just lovely?");
-        sayings.put("2", "We sure are in a pickle.");
-        sayings.put("3", "Let's get out of here!");
-        sayings.put("4", "Nice work! Your mom will be so proud of you!");
-        sayings.put("5", "Hurry up and shoot!");
-        sayings.put("6", "Where to next?");
-        sayings.put("7", "I can tell it's your first time in space.");
-        sayings.put("8", "Wanna take a turn driving?");
-        sayings.put("9", "Not as easy as it looks.");
-        sayings.put("10", "Not quite as glamorous as Avatar is it?");
+        Map<Integer, String> sayings = new HashMap<Integer, String>();
+        sayings.put(1, "Isn't the weather up here just lovely?");
+        sayings.put(2, "We sure are in a pickle.");
+        sayings.put(3, "Let's get out of here!");
+        sayings.put(4, "Nice work! Your mom will be so proud of you!");
+        sayings.put(5, "Hurry up and shoot!");
+        sayings.put(6, "Where to next?");
+        sayings.put(7, "I can tell it's your first time in space.");
+        sayings.put(8, "Wanna take a turn driving?");
+        sayings.put(9, "Not as easy as it looks.");
+        sayings.put(10, "Not quite as glamorous as Avatar is it?");
 
-        for (String key : sayings.keySet()) {
-            if (key.equals(whichPhrase)) {
-                s = sayings.getValue();
+        for (int key : sayings.keySet()) {
+            if (key == whichPhrase) {
+                s = sayings.get(key);
             }
         }
 
