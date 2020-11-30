@@ -28,15 +28,15 @@ public class SolarFlareApp{
     Thread.sleep(2000);
     System.out.println("Your mission " + person.getName() + ":");
     Thread.sleep(1000);
-    System.out.println("  Travel the solar system and clear all of the planets for human settlement.");
+    System.out.println("\tTravel the solar system and clear all of the planets for human settlement.");
     System.out.println();
     Thread.sleep(2000);
-    System.out.println("You have been equipped with the finest ship in SpaceForce's arsenal.\nIt comes with defenses to protect your health and even cupholders!\nWith the proper training you will have mastery of the solar system.");
+    System.out.println("\tYou have been equipped with the finest ship in SpaceForce's arsenal.\nIt comes with defenses to protect your health and even cupholders!\nWith the proper training you will have mastery of the solar system.");
 		System.out.println();
     Thread.sleep(2000);
-    System.out.println("Unfortunately, training is no longer in the budget, so you're going to have to learn on the job,\nbut don't worry, you look intelligent, you'll get the hang of it in no time.\n\nJust pick a planet you would like to clear first and you will be on your way!\n\n");
+    System.out.println("\tUnfortunately, training is no longer in the budget, so you're going to have to learn on the job,\nbut don't worry, you look intelligent, you'll get the hang of it in no time.\n\nJust pick a planet you would like to clear first and you will be on your way!\n\n");
     Thread.sleep(2000);
-    System.out.println("But beware of Pluto...I hear there's a pretty ruthless crew out there, and they're ready to take down anyone who comes their way.\n");
+    System.out.println("\tBut beware of Pluto...I hear there's a pretty ruthless crew out there, and they're ready to take down anyone who comes their way.\n");
     
     
     Thread.sleep(4000);
@@ -110,6 +110,8 @@ public class SolarFlareApp{
 
     
 
+    System.out.println("\n\n\t\t\t\tPress enter to close game...");
+    s.nextLine();
     System.exit(0);
 	}
 
